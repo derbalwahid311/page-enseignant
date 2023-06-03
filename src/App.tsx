@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import { useState } from "react"
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
         step === 0 ?
         <>
             <h1 className="text-3xl text-center">Demande Soutenance</h1>
-            <div className="text-2xl space-y-2 flex-col text-center w-fit mx-auto">
+            <div className="text-2xl space-y-2 flex-col border text-center w-fit mx-auto">
+              <motion.div className="border border-transparent rounded-xl" style={{}}>
                 <h1 className="cursor-pointer mt-4 mb-10" onClick={() => { setPage(0) } }>Retourner</h1>
                 <label htmlFor="iddoc-select">Choisir Doctorant : </label>
                 <select name="iddoc" id="iddoc-select">
@@ -104,7 +106,9 @@ function App() {
                 </div>
                 <h1 className="cursor-pointer text-white bg-slate-700 p-3" onClick={() => { setStep(1) } }>Etape 2</h1>
 
-              </div>
+              </motion.div>
+
+            </div>
               </>
             :
             step === 1 ?
